@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 
-class Contact extends Component {
+
+class Demographics extends Component {
     state = {  }
     render() {
         return (
             <div>
               <form>
                 <TextField
-                  label="First Name"
+                  label="Birthday"
                   margin="normal"
                 />
                 <TextField
-                  label="Middle Initial"
+                  label="Gender"
                   margin="normal"
                 />
                 <TextField
@@ -49,4 +50,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default Demographics;

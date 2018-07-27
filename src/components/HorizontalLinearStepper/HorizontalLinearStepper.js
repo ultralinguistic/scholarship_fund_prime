@@ -20,29 +20,29 @@ const styles = theme => ({
     },
 })
 
-function getSteps() {
-    return ['Contact','Demographics','Income','Expenses']
-}
+// function getSteps() {
+//     return ['Contact','Demographics','Income','Expenses']
+// }
 
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            
-            return 'Step 1: Please enter your contact information...';
-        case 1:
-            
-            return 'Step 2: Please enter your demographic information...';
-        case 2:
-            
-            return 'Step 3: Income information will be used to determine eligibility...';
-        case 3:
-            
-            return 'Step 4: Expenses will be used to determine amount awarded...';
-    
-        default:
-            return 'Not a step';
-    }
-}
+// function getStepContent(step) {
+//     switch (step) {
+//         case 0:
+//
+//             return 'Step 1: Please enter your contact information...';
+//         case 1:
+//
+//             return 'Step 2: Please enter your demographic information...';
+//         case 2:
+//
+//             return 'Step 3: Income information will be used to determine eligibility...';
+//         case 3:
+//
+//             return 'Step 4: Expenses will be used to determine amount awarded...';
+//
+//         default:
+//             return 'Not a step';
+//     }
+// }
 
 class HorizontalLinearStepper extends Component {
     handleComplete = () => {
@@ -50,14 +50,14 @@ class HorizontalLinearStepper extends Component {
 
        }
      }
-    
 
-    render() { 
-        return ( 
+
+    render() {
+        return (
         <div>
             stepper
         </div> );
     }
 }
- 
+
 export default HorizontalLinearStepper;

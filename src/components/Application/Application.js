@@ -3,78 +3,84 @@ import { connect } from 'react-redux';
 import ApplicationButtons from '../ApplicationButtons/ApplicationButtons';
 import Landing from './Landing';
 import Contact from './Contact';
+import Demographics from './Demographics';
 import HorizontalLinearStepper from '../HorizontalLinearStepper/HorizontalLinearStepper';
-
-
-
-
-
-
+import Income from './Income';
+import Expenses from './Expenses';
 
 class ApplicationPage extends Component {
   state = {
     appPage: 0,
     completed: {},
-
   }
-  
+
   pageHandler = (event) => {
     console.log(event.currentTarget.value);
-    let activeStep; 
+    let activeStep;
 
-    if (this.isLastStep() && !this.allStepsCompleted()) {
-        //If it is the last step but all steps haven't been completed
-        // find the first uncompleted step
-        const steps = getSteps()
-    }
-    
+    // if (this.isLastStep() && !this.allStepsCompleted()) {
+    //     //If it is the last step but all steps haven't been completed
+    //     // find the first uncompleted step
+    //     // const steps = getSteps()
+    // }
+
     //TODO: make it so you can't go outside of the bounds of pages
-    this.setState({ 
+    this.setState({
       appPage: this.state.appPage + parseInt(event.currentTarget.value) });
   }
 
   componentDidUpdate(prevProps, prevState) {
     console.log(this.state);
-    
+
   }
 
 render() {
   let content = ''
   switch (this.state.appPage) {
     case 0:
-    content = <Landing /> 
+    content = <Landing />
       break;
     case 1:
-    content = <Contact /> 
+    content = <Contact />
       break;
+    case 2:
+    content = <Demographics />
+      break;
+    case 3:
+    content = <Income />
+      break;
+    case 4:
+    content = <Expenses />
+      break;
+
     // case 2:
-    // content = <Page1 /> 
+    // content = <Page1 />
     //   break;
     // case 3:
-    // content = <Page1 /> 
+    // content = <Page1 />
     //   break;
     // case 4:
-    // content = <Page1 /> 
+    // content = <Page1 />
     //   break;
-  
+
     default:
       break;
-  } 
-    
+  }
+
   return (
       <div>
         <h1>APPLICATION PAGE</h1>
           <div>
           {content}
           </div>
-          <ApplicationButtons 
+          <ApplicationButtons
           pageHandler = {this.pageHandler}
           appPage = {this.state.appPage} />
-          <HorizontalLinearStepper 
+          <HorizontalLinearStepper
           //TODO: make it so the stepper is grayed out on start(landing) page.
           activeStep={this.state.appPage}
           completed= {this.state.completed}
-          /> 
+          />
       </div>
     );
   }
