@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import { submitApplication } from '../../redux/actions/applicantActions';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+  apps: state.admin.adminApplication,
+});
 
 class Review extends Component {
     state = {
@@ -15,6 +22,10 @@ class Review extends Component {
     });
   };
 
+  submitApplication = () => {
+    this.props.dispatch(submitApplication())
+  }
+
     render() {
       return (
         <div>
@@ -29,11 +40,12 @@ class Review extends Component {
         <ul className="sub">
             <li>Add questions and current inputs</li>
         </ul>
-        
+        <Button onClick={this.submit}></Button>
+
         </div>
       </div>
       );
     }
 }
 
-export default Review;
+export default connect(mapStateToProps)(Review);

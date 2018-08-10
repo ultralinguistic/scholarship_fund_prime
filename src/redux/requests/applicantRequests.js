@@ -21,3 +21,10 @@ export function saveApplicationRequest(data) {
   .then(response => response.data)
   .catch((error) => { throw error.response || error; });
 }
+
+export function submitApplicationRequest() {
+  return axios.put(`/api/application/submit`, {
+  })
+  .then(response => response.data)
+  .catch((error) => { throw error.response || error; });
+}

@@ -3,6 +3,7 @@ import { APPLICANT_ACTIONS } from '../actions/applicantActions';
 import { checkApplicantRequest } from '../requests/applicantRequests';
 import { getApplicationRequest } from '../requests/applicantRequests';
 import { saveApplicationRequest } from '../requests/applicantRequests';
+import { submitApplicationRequest } from '../requests/applicantRequests';
 
 
 let formId = '';
@@ -37,9 +38,21 @@ function* saveApplication(action) {
   }
 }
 
+function* submitApplication(action) {
+  try {
+    yield submitApplicationRequest();
+
+  }
+  catch(error) {
+    console.log('WHOOPSIES', error);
+  }
+
+}
+
 function* applicantSaga() {
   yield takeLatest(APPLICANT_ACTIONS.GET_APPLICANT, getApplicant);
-  yield takeLatest(APPLICANT_ACTIONS.SAVE_APPLICATION, saveApplication)
+  yield takeLatest(APPLICANT_ACTIONS.SAVE_APPLICATION, saveApplication);
+  yield takeLatest(APPLICANT_ACTIONS.SUBMIT_APPLICATION, submitApplication);
 }
 
 export default applicantSaga;

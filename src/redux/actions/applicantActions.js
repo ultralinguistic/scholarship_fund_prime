@@ -2,6 +2,7 @@ export const APPLICANT_ACTIONS = {
   GET_APPLICANT: 'GET_APPLICANT',
   EDIT_APPLICATION: 'EDIT_APPLICATION',
   SAVE_APPLICATION: 'SAVE_APPLICATION',
+  SUBMIT_APPLICATION: 'SUBMIT_APPLICATION',
   FILL_FORM: 'FILL_FORM',
 };
 // Checks if there is an open application, retrieves application info, else, make a new one. Either way sends a form Id
@@ -19,6 +20,10 @@ export const saveApplication = (data) => ({
 export const editApplication = (data) => ({
   type: APPLICANT_ACTIONS.EDIT_APPLICATION,
   payload: data,
+})
+
+export const submitApplication = () => ({
+  type: APPLICANT_ACTIONS.SUBMIT_APPLICATION,
 })
 
 
