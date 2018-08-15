@@ -128,6 +128,11 @@ const components = {
   ValueContainer,
 };
 
+// Autocomplete from Material UI component. This component, 'IntegreationReactSelect' is being passed
+// apps from admin.js. Iterating over all apps and suggesting firstnames based on search. Can be changed 
+// to last names, or any other value you would rather search for. Change line 147 to a different value if it 
+// pleases you.
+
 class IntegrationReactSelect extends React.Component {
   state = {
     suggestions: this.props.apps,

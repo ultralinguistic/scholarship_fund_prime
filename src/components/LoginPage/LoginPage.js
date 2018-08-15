@@ -74,7 +74,7 @@ class LoginPage extends Component {
   handleMouseDownPassword = event => {
     event.preventDefault();
   };
-
+//show or hide password
   handleClickShowPassword = () => {
     this.setState(state => ({ showPassword: !state.showPassword }));
   };

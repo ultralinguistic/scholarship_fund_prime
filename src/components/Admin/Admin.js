@@ -28,10 +28,8 @@ class AdminPage extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.editStatus)
     //on update check for loading and if loading is complete and admin is not present
     //send user to the home page if they do not have admin priv.
-
     if (!this.props.user.isLoading && !this.props.user.admin) {
       this.props.history.push('home');
     }
@@ -76,6 +74,8 @@ class AdminPage extends Component {
           handleChange = {this.handleChange}
           selectedApplicant = {this.state.selectedApplicant}
         />
+      {/* Conditionally render whether enhanced table will use props from redux store, or will use 
+      the filter derived from selected applicant, which is changed by autocomplete's selected applicant  */}
       {this.state.selectedApplicant.length ? (
         <div>
           <div></div>

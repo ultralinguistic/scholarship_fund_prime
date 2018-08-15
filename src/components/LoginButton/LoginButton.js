@@ -32,7 +32,7 @@ class LoginButton extends Component {
               (<p>Hello, {this.props.user.userName}</p>) : 
               (<p></p>)  
           }
-           
+           {/* conditionally render login or logout button */}
           {
             this.props.user.userName ? 
           (<Button onClick={this.logout}>

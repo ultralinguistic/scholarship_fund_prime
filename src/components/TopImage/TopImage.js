@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TopImage.css';
 import { Parallax } from '../../../node_modules/react-scroll-parallax';
 
+//generates a parallax image for the top of the page. pass a photo in as props.
 class TopImage extends Component {
 
   render() {

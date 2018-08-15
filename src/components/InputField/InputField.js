@@ -59,6 +59,10 @@ const ranges = [
   },
 ];
 
+// Being imported into fullScreenDialog. Refrencing props passed to FullScreenDialog. Only editable 
+// fields are status and comments. All other text fields are disabled. If at some point you would 
+// like these fields to be enabled, simply delete disabled properties.
+
 class InputAdornments extends React.Component {
   state = {
     editStatus: false,

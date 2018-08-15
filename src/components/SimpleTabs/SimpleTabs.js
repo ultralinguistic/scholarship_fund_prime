@@ -42,12 +42,14 @@ const styles = theme => ({
   },
 });
 
+//creates a header that will highlight the tab that is currently open.
 class SimpleTabs extends React.Component {
 
   state = {
     value: 0,
   }
 
+  //changes the active page
   handleChange = (event, value) => {
     this.setState({ value });
   }

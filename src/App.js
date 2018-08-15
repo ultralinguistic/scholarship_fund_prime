@@ -10,7 +10,6 @@ import {ParallaxProvider} from 'react-scroll-parallax'
 import HomePage from './components/HomePage/HomePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import UserPage from './components/UserPage/UserPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import DonatePage from './components/DonatePage/DonatePage';
 import ApplicationPage from './components/Application/ApplicationPage';
@@ -47,10 +46,6 @@ const App = () => (
               <Route
                 path="/register"
                 component={RegisterPage}
-              />
-              <Route
-                path="/user"
-                component={UserPage}
               />
               <Route
                 path="/application"

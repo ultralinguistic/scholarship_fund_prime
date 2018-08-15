@@ -40,6 +40,10 @@ const mapStateToProps = state => ({
   applicant: state.applicant,
 });
 
+// Getting comments, status, and form_id from props passed from admin.js 
+// Passing those values to Input Adornments (text fields)
+// Open is being set to close with passed props function setActive,
+
 class FullScreenDialog extends React.Component {
   state = {
     open: true,

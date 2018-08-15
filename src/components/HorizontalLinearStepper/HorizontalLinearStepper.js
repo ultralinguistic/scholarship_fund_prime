@@ -47,7 +47,6 @@ const styles = theme => ({
       },
 })
 
-
 class HorizontalLinearStepper extends Component {
 
 

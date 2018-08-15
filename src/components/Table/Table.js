@@ -13,11 +13,14 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
 
 
+//Sorting function, can be modified. 
 function getSorting(order, orderBy) {
   return order === 'desc'
     ? (a, b) => (b[orderBy] < a[orderBy] ? -1 : 1)
     : (a, b) => (a[orderBy] < b[orderBy] ? -1 : 1);
 }
+
+// Setting table header names,
 
 const columnData = [
   { id: 'status', label: 'Status' },
@@ -38,6 +41,8 @@ const CustomTableCell = withStyles(theme => ({
     fontSize: 14,
   },
 }))(TableCell);
+
+// Table Head is its own component. Allows for sorting by table header
 
 class EnhancedTableHead extends React.Component {
 
@@ -118,6 +123,7 @@ const styles = theme => ({
   }
 });
 
+// Displayed all applications passed from admin.js. 
 
 class EnhancedTable extends React.Component {
   constructor(props) {
@@ -134,12 +140,15 @@ class EnhancedTable extends React.Component {
     };
   }
 
+  // Calls reset function which is passed from admin. Sets selected applicant back to empty array. 
+  // 
   resetButton = () => {
     return (
       <Button color="primary" onClick={this.props.reset}>Reset</Button>
     )
   }
 
+  //sorts the array into an ascending or descending order based on property passed through.
   handleRequestSort = (event, property) => {
     const orderBy = property;
     let order = 'desc';
@@ -235,15 +244,3 @@ Table.propTypes = {
 
 export default withStyles(styles)(EnhancedTable);
 
-
-
-
-
-
-
-
-
-
-
-
-////
