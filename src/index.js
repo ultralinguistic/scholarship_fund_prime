@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 
+import { unregister } from './registerServiceWorker';
+
 import reducer from './redux/reducers';
 
 import App from './App';
